@@ -131,7 +131,7 @@ export default function Dashboard() {
             <Divider />
             <List>{mainListItems}</List>
             <Divider />
-            <List>{secondaryListItems}</List>
+            {/* <List>{secondaryListItems}</List> */}
           </Drawer>
           <Box
             component='main'
@@ -162,6 +162,30 @@ export default function Dashboard() {
                       </Paper>
                     </Grid>
                   </Route>
+
+                 
+
+                  <Route path='/reports'>
+                    <Grid item xs={12} md={8} lg={9}>
+                      <Paper
+                        sx={{
+                          p: 2,
+                          display: 'flex',
+                          flexDirection: 'column',
+                          height: 240
+                        }}
+                      >
+                        <Title>Reports</Title>
+                      </Paper>
+                    </Grid>
+                  </Route>
+
+
+
+
+
+
+
                   {/* Orders */}
                   <Route path='/orders'>
                     <Grid item xs={12} md={8} lg={9}>

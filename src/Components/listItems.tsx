@@ -20,33 +20,33 @@ export const mainListItems = (
       <ListItemText primary='Dashboard' />
     </ListItem>
 
-    <ListItem button component={Link} to='/orders'>
+    {/* <ListItem button component={Link} to='/orders'>
       <ListItemIcon>
         <ShoppingCartIcon />
       </ListItemIcon>
       <ListItemText primary='Orders' />
-    </ListItem>
+    </ListItem> */}
 
-    <ListItem button component={Link} to='/customers'>
+    {/* <ListItem button component={Link} to='/customers'>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
       <ListItemText primary='Customers' />
-    </ListItem>
+    </ListItem> */}
 
-    <ListItem button>
+    <ListItem button component={Link} to='/reports'>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
       <ListItemText primary='Reports' />
     </ListItem>
 
-    <ListItem button>
+    {/* <ListItem button>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
       <ListItemText primary='Integrations' />
-    </ListItem>
+    </ListItem> */}
   </div>
 )
 
