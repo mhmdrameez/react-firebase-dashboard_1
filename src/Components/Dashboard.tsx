@@ -1,4 +1,18 @@
 import React, { useState } from 'react'
+
+
+
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+
+
+
+
+
+
+
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles'
@@ -18,13 +32,24 @@ import Avatar from '@mui/material/Avatar'
 import MenuIcon from '@mui/icons-material/Menu'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import NotificationsIcon from '@mui/icons-material/Notifications'
+import { FaWalking,FaRunning,FaCarCrash} from 'react-icons/fa'
+import { GiPerson } from 'react-icons/gi'
 
-import { mainListItems, secondaryListItems } from './listItems'
+import { MdAccessibility } from "react-icons/md";
+
+
+
+
+import { mainListItems } from './listItems'
 import SignOut from './SignOut'
 import Footer from './Footer'
 import Title from './Title'
 
 import { auth } from '../Firebase'
+import ActivityCard from './ActivityCard';
+
+
+
 
 const drawerWidth = 240
 
@@ -131,7 +156,7 @@ export default function Dashboard() {
             <Divider />
             <List>{mainListItems}</List>
             <Divider />
-            <List>{secondaryListItems}</List>
+            
           </Drawer>
           <Box
             component='main'
@@ -149,49 +174,22 @@ export default function Dashboard() {
                 <Switch>
                   {/* Dashboard */}
                   <Route path='/dashboard'>
-                    <Grid item xs={12} md={8} lg={9}>
-                      <Paper
-                        sx={{
-                          p: 2,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          height: 240
-                        }}
-                      >
-                        <Title>Dashboard</Title>
-                      </Paper>
-                    </Grid>
+    <ActivityCard
+activityName='Walking'
+icon={  <FaWalking />} />
+    <ActivityCard
+activityName='Running'
+icon={   <FaRunning />} />
+<ActivityCard
+activityName='Idle'
+icon={<MdAccessibility/>} />
+<ActivityCard
+activityName='Crash'
+icon={<FaCarCrash/>} />
+
                   </Route>
                   {/* Orders */}
-                  <Route path='/orders'>
-                    <Grid item xs={12} md={8} lg={9}>
-                      <Paper
-                        sx={{
-                          p: 2,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          height: 240
-                        }}
-                      >
-                        <Title>Orders</Title>
-                      </Paper>
-                    </Grid>
-                  </Route>
-                  {/* Customers */}
-                  <Route path='/customers'>
-                    <Grid item xs={12} md={8} lg={9}>
-                      <Paper
-                        sx={{
-                          p: 2,
-                          display: 'flex',
-                          flexDirection: 'column',
-                          height: 240
-                        }}
-                      >
-                        <Title>Customers</Title>
-                      </Paper>
-                    </Grid>
-                  </Route>
+            
                   {/* Redirect none matches routes */}
                   <Route render={() => <Redirect to='/dashboard' />} />
                 </Switch>

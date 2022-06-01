@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Typography variant='body2' color='text.secondary' align='center' sx={{ pt: 4 }}>
       {'Copyright © '}
-      <Link color='inherit' href='https://material-ui.com/'>
+      <Link color='inherit' href='https://m.com/'>
         Safetify
       </Link>{' '}
       {new Date().getFullYear()}.
